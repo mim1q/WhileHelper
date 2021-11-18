@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+html {
+    background-color: #181b20;
+}
+
+body {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+
+    margin: 0;
+}
+
+main {
+    display: grid;
+
+    grid-template-rows: 60px 256px 48px 60px 256px;
+    grid-template-columns: 400px 24px 48px 24px auto 24px auto;
+}
+
+
+h1 {
+    font-size: 24px;
+    display: inline;
+    justify-self: center;
+    font-family: 'Roboto', sans-serif;
+    color: #ABB2BF;
+}
+
+#code_block {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    border-radius: 8px;
+    padding: 16px 0px;
+
+    font-family: 'Source Code Pro', monospace;
+    font-size: 16px;
+    color: #ABB2BF;
+    background-color: #282C34;
+    
+    grid-column: 1;
+    grid-row: 2;
+
+    white-space: pre-wrap;
+}
+
+#while_condition {
+    color: #7f848e;
+}
+
+.code-line {
+    padding-right: 24px;
+}
+
+.code-line--number {
+    display: inline-block;
+    width: 24px;
+    padding: 0px 16px;
+    margin-right: 16px;
+    text-align: right;
+    border-right: 1px solid #ABB2BF40;
+}
+
+.slider {
+    position: absolute;
+
+    top: 14px;
+    left: 8px;
+    right: 8px;
+    height: 1.25em;
+
+    border: 2px solid #e06c75;
+    border-radius: 4px;
+
+    pointer-events: none;
+    transition: top 75ms ease-in-out;
+}
+
+.slider::before {
+    content: '>';
+
+    position: relative;
+    left: -24px;
+
+    font-family: 'Source Code Pro', monospace;
+    font-weight: bold;
+    color: #e06c75;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.buttons#history-button-wrapper {
+    grid-column: 7;
+}
+
+button {
+    position: relative;
+
+    border-radius: 4px;
+    border: none;
+
+    bottom: 0px;
+
+    width: 48px;
+    height: 48px;
+
+    background-color: #ABB2BF;
+
+    color: #282C34;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #c3cad8;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: #8790a1;
+}
+
+button:not(:last-child) {
+    margin-bottom: 24px;
+}
+
+#document_content {
+    overflow-y: scroll;
+
+    grid-row: 5;
+    grid-column: 1;
+
+    border-radius: 8px;
+    padding: 24px;
+    
+    background-color: #ABB2BF;
+    font-family: 'Roboto', sans-serif;
+    color: #101216;
+}
+
+#memory {
+    position: relative;
+    display: inline-flex;
+    flex-direction: row;
+
+    grid-column-start: 5;
+    grid-row-start: 2;
+    grid-row-end: 6;
+
+    height: 96px;
+
+    justify-self: center;
+    overflow: hidden;
+    min-width: 96px;
+
+    border-radius: 8px;
+
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#memory.full {
+    height: auto;
+    overflow-y: scroll;
+}
+
+.memory--row {
+    display: inline-flex;
+    flex-direction: column-reverse;
+}
+
+.memory--row#history_i {
+    border-right: 1px solid #ABB2BF40;
+}
+
+.variable-name#i_name {
+    border-right: 1px solid #282C3440;
+}
+
+.variable-name, .variable-value {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    min-width: 48px;
+    height: 48px;
+
+    color: #d19a66;
+}
+
+.variable-name {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ABB2BF;
+    color: #282C34;
+}
+
+#doc_h {
+    grid-column: 1;
+    grid-row: 4;
+}
+
+#var_h {
+    grid-column: 5;
+    grid-row: 1;
+}
+
+.input {
+    height: 1em;
+    min-width: 0px;
+
+    font-family: 'Source Code Pro', monospace;
+    font-size: 16px;
+}
+
+.input[contenteditable] {
+    padding: 0 0.5em 0 0.5em;
+
+    background-color: #181b20;
+    box-shadow: inset 0px 0px 5px #101216;
+    outline: 1px dashed #e06c75
+}
+
+#memory .variable-value:last-child {
+    background-color: #282C34;
+}
+
+#memory .variable-value:not(:last-child) {
+    display: none;
+}
+
+#memory.full .variable-value:not(:last-child) {
+    display: flex;
+}
+
+#memory_history_button_h {
+    grid-row: 1;
+    grid-column: 7;
+}
+
+#history_button {
+   justify-self: center;
+    grid-row: 2;
+    grid-column: 7;
+}
