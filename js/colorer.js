@@ -40,7 +40,7 @@ export class Colorer {
             } else {
 
                 if(newLine) {
-                    outputText += `<div class="code-line"><span class="code-line--number">${lineNum++}</div>`;
+                    outputText += `<div class="code-line"><span class="code-line--number">${lineNum++}</span>`;
                     newLine = false;
                 }
                 if(token.match(/\".*\"/)) {
@@ -54,7 +54,7 @@ export class Colorer {
                     outputText += `<span style="color: ${color};">${token}</span>`
                 }
                 if(token === '\n') {
-                    outputText += '</span>';
+                    outputText += '</div>';
                     newLine = true;
                 }
             }
