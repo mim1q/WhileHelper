@@ -9,7 +9,7 @@ export class Colorer {
 
         // Rozdziel tekst na poszczególne części
         const individualTokens = text.split(/(   *|,? |[;\.\,\(\)\{\}]|\n|\+\+|\-\-)/g).filter((s) => s !== '');
-        
+
         let outputText = '';
         let newLine = true;
         let lineNum = 1;
@@ -35,12 +35,12 @@ export class Colorer {
                 } else {
                     temp = `<span class="input" id="${token.replace(/@/g, '')}" style="color: ${this.colorset['colors']['orange']};">${value}</span>`;
                 }
-                
+
                 outputText += temp;
             } else {
-                
+
                 if(newLine) {
-                    outputText += `<span class="code-line"><span class="code-line--number">${lineNum++}</span>`;
+                    outputText += `<div class="code-line"><span class="code-line--number">${lineNum++}</div>`;
                     newLine = false;
                 }
                 if(token.match(/\".*\"/)) {
