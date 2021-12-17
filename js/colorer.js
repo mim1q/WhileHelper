@@ -8,7 +8,7 @@ export class Colorer {
         const text = this.element.innerText;
 
         // Rozdziel tekst na poszczególne części
-        const individualTokens = text.split(/(   *|,? |[;\.\,\(\)\{\}]|\n|\+\+|\-\-)/g).filter((s) => s !== '');
+        const individualTokens = text.split(/(   *|,? |[;\.\,\(\)\{\}]|\||\+\+|\-\-)/g).filter((s) => s !== '');
 
         let outputText = '';
         let newLine = true;
@@ -47,16 +47,17 @@ export class Colorer {
                     token = token.replace('<', '&lt;').replace('>', '&gt;');
                 }
                 const color = this.assignColor(token);
-                if(color === 'default') {
+                if(token === "|") {
+                    outputText += '</div>';
+                    newLine = true;
+                }
+                else if(color === 'default') {
                     outputText += token;
                 }
                 else {
                     outputText += `<span style="color: ${color};">${token}</span>`
                 }
-                if(token === '\n') {
-                    outputText += '</div>';
-                    newLine = true;
-                }
+
             }
         }
 
