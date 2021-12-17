@@ -9,9 +9,9 @@ code.innerHTML
     + 'x = @x_init@;|'
     + 'while(i <= @i_lte@) @while_condition@|'
     + '{|'
-    + '&nbsp&nbsp&nbsp&nbspdocument.write(x + "&lt;br&gt;");|'
-    + '&nbsp&nbsp&nbsp&nbspx = x + @x_add@;|'
-    + '&nbsp&nbsp&nbsp&nbspi++;|'
+    + '&nbsp;&nbsp;&nbsp;&nbsp;document.write(x + "&lt;br&gt;");|'
+    + '&nbsp;&nbsp;&nbsp;&nbsp;x = x + @x_add@;|'
+    + '&nbsp;&nbsp;&nbsp;&nbsp;i++;|'
     + '}|'
     + '|';
 
