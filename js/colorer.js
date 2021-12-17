@@ -8,7 +8,7 @@ export class Colorer {
         const text = this.element.innerText;
 
         // Rozdziel tekst na poszczególne części
-        const individualTokens = text.split(/( |,? |[;\.\,\(\)\{\}]|\||\+\+|\-\-)/g).filter((s) => s !== '');
+        const individualTokens = text.split(/(   *|,? |[;\.\,\(\)\{\}]|\||\+\+|\-\-)/g).filter((s) => s !== '');
 
         let outputText = '';
         let newLine = true;
