@@ -29,7 +29,7 @@ export class CodeInspector {
         this.addState(0, '?', '?', '', null);
         this.addState(1, i_init, '?', '', null);
         this.addState(2, i_init, x_init, '', null);
-        
+
         let i = this.states[this.states.length - 1]['i'];
         let x = this.states[this.states.length - 1]['x'];
         let text = '';
@@ -56,7 +56,7 @@ export class CodeInspector {
             'i': i,
             'x': x,
             'text': text,
-            'condition': condition 
+            'condition': condition
         };
         this.states.push(state);
     }
@@ -76,17 +76,17 @@ export class CodeInspector {
 
         const doc = document.getElementById('document_content');
         doc.innerHTML = state['text'];
-        
+
         this.history_i.innerHTML += `<div class="variable-value">${state['i']}</div>`;
         this.history_x.innerHTML += `<div class="variable-value">${state['x']}</div>`;
         const cond = state['condition'];
-            this.condition.innerText = cond !== null 
-                ? (cond ? '// prawda' : '// fałsz') 
+            this.condition.innerText = cond !== null
+                ? (cond ? '// prawda' : '// fałsz')
                 : '';
     }
 
     reset() {
-        this.current_state = 0; 
+        this.current_state = 0;
         this.history_i.innerHTML = '';
         this.history_x.innerHTML = '';
         if(this.editing == true) {
@@ -112,16 +112,16 @@ export class CodeInspector {
     }
 
     toggleEditing() {
-        
+
         this.editing = !this.editing;
         const inputs = document.getElementsByClassName('input');
-        
+
         if(this.editing) {
             this.edit_button.innerHTML = '&check;';
             for (let n of inputs) {
                 n.setAttribute('contenteditable', 'true');
             }
-        } 
+        }
         else {
             this.edit_button.innerHTML = '&#x270E;';
             for (let n of inputs) {
