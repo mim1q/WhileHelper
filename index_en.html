@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>While Loop Helper</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <script type="module" src="./js/javascript_colors.js"></script>
+    <script type="module" src="./js/colorer.js"></script>
+</head>
+
+<body>
+    <main>
+        <h1>Code</h1>
+        <code id="code_block"></code>
+        <div class="buttons">
+            <button id="reset_button">↺</button>
+            <button id="forward_button">▼</button>
+            <button id="edit_button">✎</button>
+        </div>
+        <h1 id="doc_h">Document</h1>
+        <div id="document_content"></div>
+
+        <h1 id="var_h">Variables</h1>
+        <div id="memory">
+            <div>
+                <div class="variable-name" id="i_name">i</div>
+                <div class="memory--row" id="history_i">
+                </div>
+            </div>
+            <div>
+                <div class="variable-name" id="x_name">x</div>
+                <div class="memory--row" id="history_x">
+                </div>
+            </div>
+        </div>
+        <h1 id="memory_history_button_h">Show variable history</h1>
+          <button id="history_button">&check;</button>
+        <script type="module" src="./js/main.js"></script>
+        <script type="module" src="./js/code_inspector.js"></script>
+    </main>
+</body>
+
+</html>

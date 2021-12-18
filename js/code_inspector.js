@@ -81,7 +81,7 @@ export class CodeInspector {
         this.history_x.innerHTML += `<div class="variable-value">${state['x']}</div>`;
         const cond = state['condition'];
             this.condition.innerText = cond !== null
-                ? (cond ? '// prawda' : '// fałsz')
+                ? (cond ? '// true' : '// false')
                 : '';
     }
 
